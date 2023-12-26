@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+body {
+    background-color: beige;
+    font-family: "Rubik Doodle Shadow", serif;
+}
+
+h1 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-weight: 1000;
+    text-align: center;
+}
+
+li {
+    margin-left: 5vw;
+}
+
+li a {
+    font-weight: 800;
+    text-decoration: underline;
+    color: grey;
+}
+
+
