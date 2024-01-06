@@ -1,0 +1,32 @@
+html {
+    all: none;
+    background-color: rgb(175, 17, 175);
+}
+
+img {
+    height: 30vh;
+    width: 20vw;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+}
+
+.small, .big {
+    display: flex;
+    padding: 1vh;
+}
+
+.small {
+    flex: 1;
+}
+
+.big {
+    flex: 2;
+}
+
+img {
+    flex: 1;
+}
