@@ -1,0 +1,168 @@
+html {
+    all: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, .landing{
+    background-color: #1F2937;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    gap: 450px;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+header .logo{
+    font-weight: 1000;
+    font-size: 24px;
+    color: #f9faf8;
+}
+
+header .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 16px;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 115px;
+}
+
+.landing > .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 470px;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.landing h1 {
+    font-size: 48px;
+    color: #F9FAF8;
+}
+
+.landing p{
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.landing img {
+    height: 250px;
+    width: 480px;
+}
+
+.landing button {
+    padding: 8px 35px;
+    border-radius: 7px;
+    border: none;
+    background-color: #3882f6;
+    color:#E5E7EB;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.random {
+    padding: 50px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+.boxes > div {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.boxes > div > p {
+    text-align: center;
+}
+
+.blank {
+    padding: 80px;
+    border: 4px solid #3882f6;
+    border-radius: 20px;
+}
+
+.quote {
+    background-color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 280px;
+}
+
+.quote p {
+    font-size: 36px;
+    font-style: italic;
+    color: #1f2937;
+    font-weight: 100;
+}
+
+.quote h3 {
+    align-self: flex-end;
+    margin-right: 40px;
+}
+
+.advert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.actualAd {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    background-color: #3882f6;
+    color: white;
+    padding: 40px 100px;
+    border-radius: 7px;
+}
+
+.actualAd > button {
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 0px 30px;
+    background-color: #3882f6;
+    color: white;
+    font-size: 16px;
+    font-weight: 1000;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
