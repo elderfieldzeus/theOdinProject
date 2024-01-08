@@ -13,3 +13,16 @@ const MAX = 57;
 let actual = MAX - 13, percentage = actual / MAX;
 console.log(percentage);
 console.log(actual / 0);
+
+const meow = document.getElementById("Meow");
+
+let sum = 1;
+
+const addOne = (num) => {
+    return () => {
+        num += 1;
+        console.log(num);
+    }
+}
+
+meow.addEventListener("click", addOne(sum)); // (must return function)
