@@ -26,3 +26,29 @@ const addOne = (num) => {
 }
 
 meow.addEventListener("click", addOne(sum)); // (must return function)
+
+let i = 1, j = 2, k = 3;
+
+const add7 = (num) => {
+    return num + 7;
+}
+
+const multiply = (num1, num2) => {
+    return num1 * num2;
+}
+
+const capitalize = (string) => {
+    string[0] = string[0].toUpperCase();
+    return string;
+}
+
+const lastLetter = (string) => {
+    //let last = string.slice(-1);
+    let last = string.substr(-1, 1);
+    return last;
+}
+
+console.log(add7(i));
+console.log(multiply(j, k));
+console.log(capitalize("hakdog"));
+console.log(lastLetter("meow"));
