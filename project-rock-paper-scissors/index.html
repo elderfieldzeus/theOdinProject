@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>This game is played in the console. Press Ctrl + Shift + C, then head to Console.</p>
+    <h1 id="title">Rock Paper Scissors</h1>
+    <div class="scoreboard"></div>
+    <div class="buttons">
+        <div class="mainButtons">
+            <button id="rock">Rock</button>
+            <button id="paper"> Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <button id="restart">Restart</button>
+    </div>
+    <div class="status"></div>
     <script src="./script.js"></script>
 </body>
 </html>

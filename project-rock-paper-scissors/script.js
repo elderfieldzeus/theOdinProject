@@ -1,48 +1,86 @@
-const playRound = (playerSelection = "NONE", computerSelection) => {
-    playerSelection = playerSelection.toLowerCase();
-    let choice = -1;
-    if(playerSelection == "rock") choice = 0;
-    else if(playerSelection == "paper") choice = 1;
-    else if(playerSelection == "scissors") choice = 2;
-    else return -1;
+let computerScore = 0, playerScore = 0, round = 0;
 
-    if(computerSelection === choice) return 1;
-    else if(computerSelection === choice + 1 || (computerSelection === 0 && choice === 2)) return 0;
-    else return 2;
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const restart = document.querySelector('#restart');
+const scoreContainer = document.querySelector('.scoreboard');
+const statusContainer = document.querySelector('.status');
+const roundStatus = document.createElement('h1');
+const playScore = document.createElement('h1');
+const compScore = document.createElement('h1');
+const battleStatus = document.createElement('h1');
+
+battleStatus.setAttribute('id', 'battleStatus')
+roundStatus.setAttribute('id', 'roundStatus');
+playScore.setAttribute('id', 'playerScore');
+compScore.setAttribute('id', 'computerScore');
+
+battleStatus.textContent = "";
+roundStatus.textContent = "";
+playScore.textContent = `Your score: ${playerScore}`;
+compScore.textContent = `Computer score: ${computerScore}`;
+
+scoreContainer.appendChild(playScore);
+scoreContainer.appendChild(compScore);
+statusContainer.appendChild(battleStatus);
+statusContainer.appendChild(roundStatus);
+
+const choices = [rock, paper, scissors]
+
+const playRound = (playerSelection, computerSelection) => {
+    round++;
+
+    let playSelectInWords, compSelectInWords;
+    
+    switch(playerSelection){
+        case 0: playSelectInWords = "Rock"; break;
+        case 1: playSelectInWords = "Paper"; break;
+        case 2: playSelectInWords = "Scissors";
+    }
+
+    switch(computerSelection){
+        case 0: compSelectInWords = "Rock"; break;
+        case 1: compSelectInWords = "Paper"; break;
+        case 2: compSelectInWords = "Scissors";
+    }
+
+    if(computerSelection === playerSelection){
+        roundStatus.textContent = "IT IS A DRAW :|";
+    }
+    else if(computerSelection === playerSelection + 1 
+        || (computerSelection === 0 
+            && playerSelection === 2)) {
+            computerScore++;
+            roundStatus.textContent = "YOU LOST :(";
+        }
+    else {
+        playerScore++;
+        roundStatus.textContent = "YOU WON :)";
+    }
+
+    battleStatus.textContent = `You picked ${playSelectInWords}, Computer picked ${compSelectInWords}.`;
+    playScore.textContent = `Your score: ${playerScore}`;
+    compScore.textContent = `Computer score: ${computerScore}`;
 }
 
 const getComputerChoice = () => {
-    return Math.floor((Math.random() * 10) % 3);
+    let answer = Math.floor(Math.random() * 10 % 3);
+    console.log(answer);
+    return answer;
 }
 
-const game = () => {
-    let playerChoice = prompt("Enter choice");
-    let computerChoice = getComputerChoice();
-    let decision = playRound(playerChoice, computerChoice);
-    let status;
-    
-    switch(computerChoice){
-        case 0: computerChoice = "rock"; break;
-        case 1: computerChoice = "paper"; break;
-        case 2: computerChoice = "scissors"; break;
-    }
-
-    switch (decision){
-        case 0: status = "YOU LOST!!!"; break;
-        case 1: status = "IT IS A DRAW!!!"; break;
-        case 2: status = "YOU WONNNN!!!"; 
-    }
-    decision != -1 ? console.log(`You picked ${playerChoice.toLowerCase()}, Computer picked ${computerChoice}. ${status}`) : console.log("TRY AGAIN!");
-    return decision;
+const restartGame = () => {
+    playerScore = 0;
+    computerScore = 0;
+    playScore.textContent = `Your score: ${playerScore}`;
+    compScore.textContent = `Computer score: ${computerScore}`;
+    battleStatus.textContent = ``;
+    roundStatus.textContent = ``;
 }
 
-let times = 0, playerScore = 0, computerScore = 0;
+choices.forEach((choice, index) => {
+    choice.addEventListener("click", () => playRound(index, getComputerChoice()));
+})  
 
-do{
-    let result = game();
-    if(result === 0 || result === 2) {
-        times++;
-        result === 2 ? playerScore ++ : computerScore ++;
-    }
-    console.log(`Your score: ${playerScore}\nComputer score: ${computerScore}`);
-}while(times < 5);
+restart.addEventListener("click", () => restartGame());
