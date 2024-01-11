@@ -76,3 +76,16 @@ container.appendChild(blue);
 container.appendChild(black);
 black.appendChild(par);
 black.insertBefore(head1, par);
+
+//Adding event listener
+
+const buttons = document.querySelectorAll('#Meow');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        if(event.target.style.backgroundColor == 'pink')
+            event.target.style.cssText = ['background-color: none;'];
+        else 
+        event.target.style.cssText = ['background-color: pink;'];
+    })
+});
