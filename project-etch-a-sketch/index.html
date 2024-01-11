@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1 id="title">Etch-a-sketch</h1>
+    <p id="credits">by Zeus Elderfield</p>
+    <div class="main">
+        <div class="menu">
+            <h3>Select graph size:</h3>
+            <div>
+                <input type="range" min="1" max="64" step="1" value="1" oninput="sliderChange(this.value)">
+                <output id="slider">1 x 1</output>
+            </div>
+            <h3>Select color:</h3>
+            <div class="buttons">
+                <div class="row1">
+                    <button id="red"></button>
+                    <button id="orange"></button>
+                    <button id="yellow"></button>
+                </div>
+                <div>
+                    <button id="green"></button>
+                    <button id="blue"></button>
+                    <button id="indigo"></button>
+                </div>
+                <div>
+                    <button id="violet"></button>
+                    <button id="black"></button>
+                    <button id="white"></button>
+                </div>
+                <button id="clear">CLEAR</button>
+            </div>
+        </div>
+        
+        <div class="canva">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
