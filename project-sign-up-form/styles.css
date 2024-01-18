@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+:root {
+    --left-height: 100vh;
+    --left-width: 80vw;
+    --logo-height: 10vh;
+    --logo-gap: 1vw;
+    --logo-font-size: 1.8rem;
+    --logo-top-margin: 20vh;
+    --banner-background: rgba(0, 0, 0, 0.493);
+
+    --form-background: rgba(207, 207, 207, 0.329);
+    --form-margin: 8vh;
+}
+
+*, :before, :after, body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: var(--form-background);
+}
+
+.left {
+    display: flex;
+    position: relative;
+    height: var(--left-height);
+    width: var(--left-width);
+}
+
+#background {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--left-height);
+}
+
+.banner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--logo-top-margin);
+    gap: var(--logo-gap);
+    background-color: var(--banner-background);
+    height: calc(var(--logo-height) + 6vh);
+    width: 100%;
+    font-size: var(--logo-font-size);
+    font-family: 'Rubik Burned', sans-serif;
+    color: white;
+}
+
+#logo {
+    height: var(--logo-height);
+    align-self: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    margin: var(--form-margin);
+}
