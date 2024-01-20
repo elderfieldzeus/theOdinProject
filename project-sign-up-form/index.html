@@ -16,8 +16,48 @@
     </div>
 
     <div class="right">
-        <h1>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</h1>
-        <h1>You <em>know</em> you want to.</h1>
+        <div class="top">
+            <h1>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</h1>
+            <h1>You <em>know</em> you want to.</h1>
+        </div>
+        <div class="formClass">
+            <form action="#" method="get">
+                <div class="whiteBackground">
+                    <h3>Let's do this!</h3>
+                    <div class="firstRow">
+                        <div class="firstName">
+                            <label for="firstName">FIRST NAME</label>
+                            <input type="text" minlength="3" maxlength="20" name="firstName" id="firstName">
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName">LAST NAME</label>
+                            <input type="text" minlength="3" maxlength="20" name="lastName" id="lastName">
+                        </div>
+                    </div>
+                    <div class="secondRow">
+                        <div class="email">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="phoneNum">
+                            <label for="phoneNum">PHONE NUMBER</label>
+                            <input type="text" id="phoneNum" name="phoneNum" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
+                        </div>
+                    </div>
+                    <div class="thirdRow">
+                        <div class="password">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
+                        <div class="confirmPass">
+                            <label for="confirmPass">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirmPass" name="confirmPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
     </div>
     
     <script src="./script.js"></script>

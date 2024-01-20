@@ -2,15 +2,18 @@
 
 :root {
     --left-height: 100vh;
-    --left-width: 80vw;
+    --left-width: 70vw;
     --logo-height: 10vh;
     --logo-gap: 1vw;
     --logo-font-size: 1.8rem;
-    --logo-top-margin: 20vh;
+    --logo-top-margin: 23vh;
     --banner-background: rgba(0, 0, 0, 0.493);
 
-    --form-background: rgba(207, 207, 207, 0.329);
-    --form-margin: 8vh;
+    --form-background: rgba(235, 234, 234, 0.329);
+    --form-side-margin: 3vh 24vw 5vh 8vh;
+    --top-text-gap: 5vh;
+    --right-font-style: sans-serif;
+    --top-font-size: 0.6rem;
 }
 
 *, :before, :after, body, html {
@@ -61,5 +64,66 @@ body {
 .right {
     display: flex;
     flex-direction: column;
-    margin: var(--form-margin);
+    margin-top: 4vh;
+    font-family: var(--right-font-style);
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--top-text-gap);
+    font-size: var(--top-font-size);
+    margin: var(--form-side-margin);
+}
+
+.whiteBackground {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: var(--form-side-margin);
+    box-shadow: 1px 1px 6px black;
+    gap: 2vh;
+    font-size: 0.8rem;
+    color: rgb(39, 39, 39);
+}
+
+.whiteBackground > div > div{
+    display: flex;
+    flex-direction: column;
+    font-weight: 550;
+}
+
+.whiteBackground h3 {
+    font-size: 1.4rem;
+}
+
+.whiteBackground > div {
+    display: flex;
+    gap: 5vw;
+}
+
+.whiteBackground > div > div > input {
+    width: 16vw;
+    height: 4.8vh;
+    border-radius: 6px;
+    border: 1px #E5E7EB solid;
+    padding: 0 0 0 0.7vw;
+    font-size: 1rem;
+}
+
+#firstName:focus {
+    border: 1px blue solid;
+}
+
+button {
+    background-color: #596D48;
+    color: white;
+    font-weight: 550;
+    font-size: 0.9rem;
+    border: none;
+    width: 14vw;
+    height: 7.2vh;
+    border-radius: 10px;
+    margin: var(--form-side-margin);
+    margin-top: 5vh;
 }
