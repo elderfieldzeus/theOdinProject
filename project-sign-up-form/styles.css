@@ -10,10 +10,12 @@
     --banner-background: rgba(0, 0, 0, 0.493);
 
     --form-background: rgba(235, 234, 234, 0.329);
-    --form-side-margin: 3vh 24vw 5vh 8vh;
+    --form-side-margin: 3vh 18vw 5vh 8vh;
+    --form-side-padding: 3vh 24vw 5vh 8vh;
     --top-text-gap: 5vh;
     --right-font-style: sans-serif;
     --top-font-size: 0.6rem;
+    --logIn-font-size: 0.8rem;
 }
 
 *, :before, :after, body, html {
@@ -80,7 +82,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: var(--form-side-margin);
+    padding: var(--form-side-padding);
     box-shadow: 1px 1px 6px black;
     gap: 2vh;
     font-size: 0.8rem;
@@ -111,10 +113,6 @@ body {
     font-size: 1rem;
 }
 
-#firstName:focus {
-    border: 1px blue solid;
-}
-
 button {
     background-color: #596D48;
     color: white;
@@ -124,6 +122,26 @@ button {
     width: 14vw;
     height: 7.2vh;
     border-radius: 10px;
-    margin: var(--form-side-margin);
+    margin: var(--form-side-padding);
     margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #303f24;
+}
+
+#logIn {
+    margin: var(--form-side-margin);
+    margin-top: 0;
+    font-size: var(--logIn-font-size);
+}
+
+#logIn a {
+    color: #596D48;
+    text-decoration: none;
 }
