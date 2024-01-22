@@ -47,15 +47,16 @@
                     <div class="thirdRow">
                         <div class="password">
                             <label for="password">PASSWORD</label>
-                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="checkPasswordMatch()">
+                            <p id="doesNotMatch"></p>
                         </div>
                         <div class="confirmPass">
                             <label for="confirmPass">CONFIRM PASSWORD</label>
-                            <input type="password" id="confirmPass" name="confirmPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <input type="password" id="confirmPass" name="confirmPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="checkPasswordMatch()">
                         </div>
                     </div>
                 </div>
-                <button type="submit">Create Account</button>
+                <button id="submit" type="submit">Create Account</button>
             </form>
             <h3 id="logIn">Already have an account? <a href="#">Log in</a></h3>
         </div>

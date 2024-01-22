@@ -113,6 +113,16 @@ body {
     font-size: 1rem;
 }
 
+.whiteBackground > div > div > input:focus {
+    border: 1px #4699f8 solid;
+    outline: none;
+}
+
+.whiteBackground > div > div > input:invalid {
+    border: 1px red solid;
+    outline: none;
+}
+
 button {
     background-color: #596D48;
     color: white;
@@ -144,4 +154,14 @@ button:active {
 #logIn a {
     color: #596D48;
     text-decoration: none;
+}
+
+input.error {
+    border: 1px red solid;
+} 
+
+#doesNotMatch {
+    color: red;
+    font-size: 0.7rem;
+    margin-top: 0.8vh;
 }
