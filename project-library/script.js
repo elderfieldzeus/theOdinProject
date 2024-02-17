@@ -4,12 +4,12 @@ const addButton = document.querySelector(".add");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const dateInput = document.getElementById("date");
+const error = document.getElementById("error");
 
 const inputs = [titleInput, authorInput, dateInput];
 
 titleInput.placeholder = "Harry Pota";
 authorInput.placeholder = "JK Labajo";
-dateInput.placeholder = "September 11, 2001";
 
 function Book(title, author, date) {
     this.title = title;
@@ -27,26 +27,40 @@ function display(newBook) {
     let newTitle = document.createElement("h1");
     let newAuthor = document.createElement("h3");
     let newDate = document.createElement("h5");
+    let deleteButton = document.createElement("button");
     container.classList = "bookContainer";
 
     mainDiv.appendChild(container);
     container.appendChild(newTitle);
     container.appendChild(newAuthor);
     container.appendChild(newDate);
+    container.appendChild(deleteButton);
 
     newTitle.innerHTML = newBook.title;
     newAuthor.innerHTML = newBook.author;
     newDate.innerHTML = newBook.date;
+    deleteButton.innerHTML = "delete";
 
     reset();
+
+    newBook.index = myLibrary.length - 1;
+
+    deleteButton.addEventListener("click", () => {
+        myLibrary.splice(newBook.index, 1);
+        mainDiv.removeChild(container);
+        myLibrary.forEach((book) => {
+            if(book.index > newBook.index) book.index--;
+        })
+    });
 }
 
 function addBookToLibrary() {
     if(titleInput.value === "" || authorInput.value === "" || dateInput.value === "") {
-        alert("LACKING INPUT");
+        error.innerHTML = "Warning: Lacking input."
         return;
     }
 
+    error.innerHTML = "";
     let newBook = new Book(titleInput.value, authorInput.value, dateInput.value);
     myLibrary.push(newBook);
     display(newBook);

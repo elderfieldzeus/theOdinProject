@@ -25,6 +25,13 @@
 .input {
     display: flex;
     flex-direction: column;
+    width: 170px;
+}
+
+#error {
+    color: rgb(110, 39, 39);
+    font-size: 12px;
+    font-weight: 1000;
 }
 
 .add {
