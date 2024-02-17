@@ -1,0 +1,56 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --book_height: 200px;
+    --book_width: 130px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.askForInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.add {
+    padding: 0px 15px;
+}
+
+.books {
+    margin: 20px;
+    display: grid;
+    grid-template: var(--book_height) / repeat(8, var(--book_width));
+    grid-auto-rows: var(--book_height);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.bookContainer {
+    background-color: rgb(243, 200, 200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookContainer > h1 {
+    margin-top: 20px;
+}
+
+.bookContainer > h3 {
+    justify-self: flex-end;
+}
