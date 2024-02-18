@@ -1,5 +1,8 @@
 const myLibrary = [];
 
+const openDialog = document.getElementById("openDialog");
+const dialog = document.getElementById("main");
+
 const addButton = document.querySelector(".add");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
@@ -11,10 +14,12 @@ const inputs = [titleInput, authorInput, dateInput];
 titleInput.placeholder = "Harry Pota";
 authorInput.placeholder = "JK Labajo";
 
-function Book(title, author, date) {
-    this.title = title;
-    this.author = author;
-    this.date = date;
+class Book {
+    constructor(title, author, date) {
+        this.title = title;
+        this.author = author;
+        this.date = date;
+    }
 }
 
 function reset() {
@@ -41,7 +46,7 @@ function display(newBook) {
     newDate.innerHTML = newBook.date;
     deleteButton.innerHTML = "delete";
 
-    reset();
+    //reset();
 
     newBook.index = myLibrary.length - 1;
 
@@ -59,7 +64,7 @@ function addBookToLibrary() {
         error.innerHTML = "Warning: Lacking input."
         return;
     }
-
+    dialog.close();
     error.innerHTML = "";
     let newBook = new Book(titleInput.value, authorInput.value, dateInput.value);
     myLibrary.push(newBook);
@@ -74,3 +79,7 @@ inputs.forEach((input) => {
         }
     }); 
 });
+
+openDialog.addEventListener("click", () => {
+    dialog.showModal();
+})
