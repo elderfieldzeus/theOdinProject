@@ -15,10 +15,11 @@ titleInput.placeholder = "Harry Pota";
 authorInput.placeholder = "JK Labajo";
 
 class Book {
-    constructor(title, author, date) {
+    constructor(title, author, date, status) {
         this.title = title;
         this.author = author;
         this.date = date;
+        this.status = status;
     }
 }
 
@@ -33,25 +34,42 @@ function display(newBook) {
     let newTitle = document.createElement("h1");
     let newAuthor = document.createElement("h3");
     let newDate = document.createElement("h5");
+    let readButton = document.createElement("div");
     let deleteButton = document.createElement("button");
     container.classList = "bookContainer";
     bookStub.classList = "bookStub";
+    readButton.classList = "unread";
 
     mainDiv.appendChild(container);
     container.appendChild(bookStub);
     container.appendChild(newTitle);
     container.appendChild(newAuthor);
     container.appendChild(newDate);
+    container.appendChild(readButton);
     container.appendChild(deleteButton);
 
     newTitle.innerHTML = `"${newBook.title}"`;
     newAuthor.innerHTML = newBook.author;
     newDate.innerHTML = newBook.date;
+    readButton.innerHTML = "Unread!";
     deleteButton.innerHTML = "Remove!";
 
     reset();
 
     newBook.index = myLibrary.length - 1;
+
+    readButton.addEventListener("click", () => {
+        if(readButton.classList == "unread") {
+            readButton.classList = "read";
+            readButton.innerHTML = "Read!";
+            myLibrary[newBook.index].status = "read";
+        }
+        else {
+            readButton.classList = "unread";
+            readButton.innerHTML = "Unread!";
+            myLibrary[newBook.index].status = "unread";
+        }
+    });
 
     deleteButton.addEventListener("click", () => {
         myLibrary.splice(newBook.index, 1);
@@ -69,7 +87,7 @@ function addBookToLibrary() {
     }
     dialog.close();
     error.innerHTML = "";
-    let newBook = new Book(titleInput.value, authorInput.value, dateInput.value);
+    let newBook = new Book(titleInput.value, authorInput.value, dateInput.value, "unread");
     myLibrary.push(newBook);
     display(newBook);
 }

@@ -138,6 +138,29 @@ button:hover {
     overflow: wrap;
 }
 
+.unread, .read {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    width: 75px;
+    padding: 0px 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.unread {
+    background-color: red;
+}
+
+.read {
+    background-color: green;
+}
+
 .bookContainer > h3 {
     font-size: 16px;
     justify-self: flex-end;
