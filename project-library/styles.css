@@ -12,6 +12,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #d5c5ae;
     font-family: "EB Garamond", sans-serif;
 }
@@ -19,6 +21,7 @@ body {
 .hook {
     background-color: #b18653;
     padding: 20px;
+    border: 2px solid #352819;
 }
 
 .header {
@@ -38,15 +41,19 @@ body {
     text-shadow: 2px 1px 0px #bdb8b2;
 }
 
-#openDialog {
-    padding: 10px 15px;
+button {
     border: #352819 2px solid;
     border-radius: 17px;
     cursor: pointer;
+    font-weight: 800;
 }
 
-#openDialog:hover {
-    background-color: #d4b997;
+#openDialog {
+    padding: 10px 15px;
+}
+
+button:hover {
+    background-color: #c4a176;
 }
 
 #main {
@@ -92,6 +99,7 @@ body {
     grid-auto-rows: var(--book_height);
     column-gap: 20px;
     row-gap: 20px;
+    align-self: center;
 }
 
 .bookContainer {
@@ -104,6 +112,7 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
+    overflow: wrap;
 }
 
 .bookStub {
@@ -117,6 +126,8 @@ body {
 .bookContainer > h1 {
     margin-top: 20px;
     text-align: center;
+    width: calc(var(--book_width) - 12px);
+    overflow: wrap;
 }
 
 .bookContainer > h3 {
@@ -127,4 +138,5 @@ body {
     position: absolute;
     bottom: 0;
     margin-bottom: 25px;
+    padding: 2px 6px;
 }
