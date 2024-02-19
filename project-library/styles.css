@@ -18,6 +18,11 @@ body {
     font-family: "EB Garamond", sans-serif;
 }
 
+input, label{
+    font-family: "EB Garamond", sans-serif;
+    font-weight: 500;
+}
+
 .hook {
     background-color: #b18653;
     padding: 20px;
@@ -94,8 +99,9 @@ button:hover {
 
 .books {
     margin: 20px;
+    width: 90vw;
     display: grid;
-    grid-template: var(--book_height) / repeat(8, var(--book_width));
+    grid-template: var(--book_height) / repeat(auto-fill, minmax(var(--book_width), 1fr));
     grid-auto-rows: var(--book_height);
     column-gap: 20px;
     row-gap: 20px;
@@ -113,6 +119,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     overflow: wrap;
+    width: 100%;
 }
 
 .bookStub {
@@ -124,6 +131,7 @@ button:hover {
 }
 
 .bookContainer > h1 {
+    font-size: 28px;
     margin-top: 20px;
     text-align: center;
     width: calc(var(--book_width) - 12px);
@@ -131,12 +139,13 @@ button:hover {
 }
 
 .bookContainer > h3 {
+    font-size: 16px;
     justify-self: flex-end;
 }
 
 .bookContainer > button {
     position: absolute;
     bottom: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 2px 6px;
 }

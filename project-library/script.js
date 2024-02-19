@@ -44,12 +44,12 @@ function display(newBook) {
     container.appendChild(newDate);
     container.appendChild(deleteButton);
 
-    newTitle.innerHTML = newBook.title;
+    newTitle.innerHTML = `"${newBook.title}"`;
     newAuthor.innerHTML = newBook.author;
     newDate.innerHTML = newBook.date;
     deleteButton.innerHTML = "Remove!";
 
-    //reset();
+    reset();
 
     newBook.index = myLibrary.length - 1;
 
