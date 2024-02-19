@@ -29,13 +29,16 @@ function reset() {
 function display(newBook) {
     let mainDiv = document.querySelector(".books");
     let container = document.createElement("div");
+    let bookStub = document.createElement("div");
     let newTitle = document.createElement("h1");
     let newAuthor = document.createElement("h3");
     let newDate = document.createElement("h5");
     let deleteButton = document.createElement("button");
     container.classList = "bookContainer";
+    bookStub.classList = "bookStub";
 
     mainDiv.appendChild(container);
+    container.appendChild(bookStub);
     container.appendChild(newTitle);
     container.appendChild(newAuthor);
     container.appendChild(newDate);

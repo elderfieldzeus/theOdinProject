@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 *, ::before, ::after {
     margin: 0;
     padding: 0;
@@ -9,16 +11,42 @@
     --book_width: 130px;
 }
 
+body {
+    background-color: #d5c5ae;
+    font-family: "EB Garamond", sans-serif;
+}
+
+.hook {
+    background-color: #b18653;
+    padding: 20px;
+}
+
 .header {
     display: flex;
     justify-content: center;
-    padding: 10px;
 }
 
 .newBook {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 7px;
+}
+
+.header, .newBook {
+    color: black;
+    text-shadow: 2px 1px 0px #bdb8b2;
+}
+
+#openDialog {
+    padding: 10px 15px;
+    border: #352819 2px solid;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+#openDialog:hover {
+    background-color: #d4b997;
 }
 
 #main {
@@ -67,10 +95,23 @@
 }
 
 .bookContainer {
-    background-color: rgb(243, 200, 200);
+    background-color: #d3bda3;
+    border: 2px black solid;
+    border-radius: 2px;
+    padding-left: 10px;
+    box-shadow: 4px 4px 5px grey;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
+}
+
+.bookStub {
+    position: absolute;
+    left: 0;
+    background-color: #352819;
+    height: calc(var(--book_height) - 3px);
+    width: 10px;
 }
 
 .bookContainer > h1 {
@@ -80,4 +121,10 @@
 
 .bookContainer > h3 {
     justify-self: flex-end;
+}
+
+.bookContainer > button {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
 }
