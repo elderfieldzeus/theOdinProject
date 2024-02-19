@@ -46,7 +46,7 @@ function display(newBook) {
     newDate.innerHTML = newBook.date;
     deleteButton.innerHTML = "delete";
 
-    //reset();
+    reset();
 
     newBook.index = myLibrary.length - 1;
 
