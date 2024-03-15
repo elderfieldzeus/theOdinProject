@@ -10,7 +10,17 @@
 }
 
 body {
-    background-color: blanchedalmond;
+    background-color: rgb(236, 203, 170);
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.black {
+    background-color: rgb(62, 61, 60);
+    color: rgb(199, 197, 197);
 }
 
 #welcome {
@@ -36,6 +46,7 @@ body {
 }
 
 .box {
-    background-color: white;
+    background-color: rgb(212, 212, 212);
     outline: 2px solid black;
+    cursor: pointer;
 }
