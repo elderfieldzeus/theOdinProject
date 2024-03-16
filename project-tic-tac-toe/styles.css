@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
 *, ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Madimi One", sans-serif;
 }
 
 :root {
     --gap: 4vh;
     --box-size: max(10vh, 10vw);
+    --box-color: rgb(212, 212, 212);
 }
 
 body {
@@ -16,14 +20,22 @@ body {
 .white {
     background-color: white;
     color: black;
+    text-shadow: 2px 2px 0px rgb(212, 210, 210);
 }
 
 .black {
     background-color: rgb(62, 61, 60);
     color: rgb(199, 197, 197);
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);
 }
 
-#welcome {
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
     text-align: center;
     width: 30vh;
     font-size: 5vh;
@@ -46,7 +58,47 @@ body {
 }
 
 .box {
-    background-color: rgb(212, 212, 212);
+    background-color: var(--box-color);
     outline: 2px solid black;
     cursor: pointer;
+}
+
+button {
+    font-size: 20px;
+    padding: 2px 10px;
+    border-radius: 27px;
+    outline: 0;
+    border: solid 2px black;
+    background-color: var(--box-color);
+    cursor: pointer;
+}
+
+dialog {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    text-shadow: 1px 1px 0px white;
+}
+
+.win {
+    background-color: rgba(195, 245, 206, 0.778);
+}
+
+.draw {
+    background-color: rgba(198, 93, 58, 0.724);
+}
+
+dialog > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+dialog > div > h1 {
+    width: 100vw;
 }
