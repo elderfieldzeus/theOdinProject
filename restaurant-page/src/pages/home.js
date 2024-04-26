@@ -1,17 +1,12 @@
-import Logo from "../app/homepage/logo.js";
 import Company from "../app/homepage/company_name.js";
-import getDescription from "../app/homepage/description.js";
+import Description from "../app/homepage/description.js";
+import Logo from "../app/homepage/logo.js";
 
-export default class Home {
-    logo = new Logo();
-    company = new Company();
+export default function Home() {
+    const main = document.getElementById("content");
 
-    main = document.getElementById("content");
-
-    render() {
-        //add to DOM
-        this.main.appendChild(this.company.toH1());
-        this.main.appendChild(getDescription());
-    } 
+    main.appendChild(Company());
+    main.appendChild(Logo());
+    main.appendChild(Description());
 }
 

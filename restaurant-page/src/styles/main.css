@@ -28,10 +28,20 @@ body {
     flex-direction: column;
     max-width: 30vw;
     align-items: center;
+    
+    gap: 20px;
+
     background-color: rgba(28, 28, 28, 0.486);
     padding: 2vh 3vh;
     border-radius: 20px;
     box-shadow: 0 0 20px rgb(250, 248, 127);
+}
+
+#chef_zeus {
+    font-size: 100px;
+    text-align: center;
+    line-height: 65px;
+    width: 100%;
 }
 
 #content > p {
