@@ -1,10 +1,9 @@
 export default class Logo {
     //link is relative to dist
-    link = `../src/assets/images/logo.webp`; 
-
     toImage = () => {
         const img = document.createElement("img");
-        img.src = this.link;
+        img.src = "../src/assets/images/logo.webp";
+        //img.src = logoImage;
         img.className = "logo";
         return img;
     }
