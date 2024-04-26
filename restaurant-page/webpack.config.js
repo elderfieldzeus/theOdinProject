@@ -12,7 +12,7 @@ const stylesHandler = 'style-loader';
 
 
 const config = {
-    entry: './src/app/index.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
@@ -22,7 +22,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/app/template.html',
+            template: './src/template.html',
         }),
 
         // Add your plugins here
