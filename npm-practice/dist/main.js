@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction sayName(name) {\n    return `Shut up, ${name}!!!`;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sayName);\n\n//# sourceURL=webpack://npm-practice/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction sayName(name) {\n  return \"Shut up, \".concat(name, \"!!!\");\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sayName);\n\n//# sourceURL=webpack://my-webpack-project/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ \"./src/index.js\");\n\n\nconst win = document.querySelector(\"body\");\n\nfunction element(name) {\n    const el = document.createElement(\"h1\");\n    el.textContent = (0,_index_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(name);\n    return el;\n}\n\nwin.appendChild(element(\"ZEUS\"));\n\n//# sourceURL=webpack://npm-practice/./src/name.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ \"./src/index.js\");\n\nvar win = document.querySelector(\"body\");\nfunction element(name) {\n  var el = document.createElement(\"h1\");\n  el.textContent = (0,_index_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(name);\n  return el;\n}\nwin.appendChild(element(\"ZEUS\"));\n\n//# sourceURL=webpack://my-webpack-project/./src/name.js?");
 
 /***/ })
 

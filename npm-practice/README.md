@@ -1,7 +1,13 @@
 npm install webpack webpack-cli --save-dev
 
 
-webpack.config.js (needed) => set up first
+npx webpack init
 
 
-in package.json => scripts > builds: "npx webpack"
+npm install watch //for live server
+
+
+npm run watch //build whenever change is made
+
+
+change entry and template in webpack.config.js if necessary
