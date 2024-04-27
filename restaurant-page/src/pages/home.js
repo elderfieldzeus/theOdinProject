@@ -1,12 +1,12 @@
-import Company from "../app/homepage/company_name.js";
-import Description from "../app/homepage/description.js";
-import Logo from "../app/homepage/logo.js";
+import Company from "../components/homepage/company_name.js";
+import HomeDescription from "../components/homepage/description.js";
+import Logo from "../components/homepage/logo.js";
 
 export default function Home() {
     const main = document.getElementById("content");
+    main.className = "home";
 
     main.appendChild(Company());
-    main.appendChild(Logo());
-    main.appendChild(Description());
+    main.appendChild(HomeDescription());
 }
 

@@ -16,12 +16,10 @@ home_button.addEventListener("click", () => {
 
 about_button.addEventListener("click", () => {
     ClearPage();
-
     //code here
 })
 
 menu_button.addEventListener("click", () => {
     ClearPage();
-
     //code here
 })

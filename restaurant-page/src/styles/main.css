@@ -5,9 +5,42 @@
 }
 
 header {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 0;
+    padding: 2vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.385);
+    border-radius: 0 0 10px 10px;
 }
+
+nav {
+    display: flex;
+    gap: 10vw;
+}
+
+nav > button {
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 10px black;
+    padding: 2px 4px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+}
+
+nav > button:hover {
+    transition: 1s;
+    border-radius: 100%;
+    text-shadow: 0 0 50px gold;
+    font-size: 15px;
+}
+
+nav > button:not(:hover) {
+    transition: 1s;
+}
+
 
 body {
     background-image: url("../assets/images/logo.webp");
@@ -23,7 +56,7 @@ body {
 
 /*home*/
 
-#content {
+.home {
     display: flex;
     flex-direction: column;
     max-width: 30vw;
