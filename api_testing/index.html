@@ -6,18 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="" alt="#">
+    <center>
+      <img src="" alt="#">
+    </center>
+    
 
     <script>
         const img = document.querySelector('img');
         const api_key = "pKI5EqiUIwS5VqDmPmTuv4HBlxazWMgv"
-        fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=cats`, {mode: 'cors'})
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(response) {
-            img.src = response.data.images.original.url;
-          });
+        // fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=cats`, {mode: 'cors'})
+        //   .then(function(response) {
+        //     return response.json();
+        //   })
+        //   .then(function(response) {
+        //     img.src = response.data.images.original.url;
+        //   });
+
+        async function fetchGif(img, api_key) {
+          try {
+            const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=cats`, {mode: 'cors'});
+            const catData = await response.json();
+            img.src = catData.data.images.original.url;
+          }
+          catch(error) {
+            console.log(error);
+          }
+        }
+
+        fetchGif(img, api_key);
       </script>
 </body>
 </html>
